@@ -4,8 +4,11 @@ layout: page
 pageOrder: 3
 ---
 <% json = JSON.parse @include('../meetups/meetups.json') %>
-<% for meetup in json: %>
-  <li>
-    <span><%= meetup.title %></span>
-  </li>
-<% end %>
+<ul class="meetup-list">
+  <% for meetup in json: %>
+    <li>
+      <span class="meetup-title"><%= meetup.title %> - <%= meetup.on %></span>
+      <p class="description" style="margin-left: 10px"><%= meetup.blurb %></p>
+    </li>
+  <% end %>
+</ul>
