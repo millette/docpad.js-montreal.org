@@ -78,6 +78,9 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			@site.keywords.concat(@document.keywords or []).join(', ')
 
+		getMeetups: () ->
+			JSON.parse @include('../meetups/meetups.json')
+
 
 	# =================================
 	# Collections
@@ -89,9 +92,6 @@ docpadConfig = {
 
 		posts: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
-
-		meetups: (database) ->
-			database.findAllLive()
 
 	# =================================
 	# Plugins

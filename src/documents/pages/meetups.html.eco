@@ -3,7 +3,7 @@ title: Meet-Ups
 layout: page
 pageOrder: 3
 ---
-<% json = JSON.parse @include('../meetups/meetups.json') %>
+<% json = @getMeetups('meetups') %>
 <ul class="meetup-list">
   <% for meetup in json: %>
     <li>
