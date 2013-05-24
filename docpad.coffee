@@ -90,6 +90,8 @@ docpadConfig = {
 		posts: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
 
+		meetups: (database) ->
+			database.findAllLive()
 
 	# =================================
 	# Plugins
